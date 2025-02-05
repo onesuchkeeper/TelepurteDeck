@@ -36,17 +36,6 @@ SMODS.Atlas{
 	atlas_table = 'ASSET_ATLAS'
 }
 
---[[
-SMODS.Atlas{
-    key = "telepurte_clubs_2",
-    path = "telepurte_clubs_2.png",
-    px = 71,
-    py = 95,
-	atlas_table = 'ASSET_ATLAS'
-}
-]]
-
-
 SMODS.DeckSkin{
 	key = "telepurte_clubs",
 	suit = 'Clubs',
