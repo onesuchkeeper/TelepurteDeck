@@ -6,7 +6,7 @@
 --- VERSION: 1.0.0
 --- LOADER_VERSION_GEQ: 1.0.0
 --- BADGE_COLOUR: 148bdb
---- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-1030f]
+--- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-1404g]
 --- PRIORITY: 0
 ----------------------------------------------
 ------------MOD CODE -------------------------
@@ -19,7 +19,7 @@ debugMessage("Launching")
 G.F_NO_ACHIEVEMENTS = false
 local Mod = SMODS.current_mod
 
---icon
+--icon--
 SMODS.Atlas({
 	key = "modicon",
 	path = "icon.png",
@@ -33,21 +33,25 @@ SMODS.Atlas{
     path = "telepurte_clubs_1.png",
     px = 71,
     py = 95,
-	atlas_table = 'ASSET_ATLAS'
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
 }
 
 SMODS.DeckSkin{
 	key = "telepurte_clubs",
 	suit = 'Clubs',
-	ranks = {
-		'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"
+	palettes = {
+		{
+			key = 'lc',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_clubs_1',
+			posStyle = 'suit'
+		}
 	},
-	--hc_atlas = "telepurte_clubs_2",
-	lc_atlas = "telepurte_clubs_1",
 	loc_txt = {
 		['en-us'] = 'Telepurte'
-	},
-	posStyle = 'suit'
+	}
 }
 
 --spades--
@@ -56,31 +60,25 @@ SMODS.Atlas{
     path = "telepurte_spades_1.png",
     px = 71,
     py = 95,
-	atlas_table = 'ASSET_ATLAS'
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
 }
-
---[[
-SMODS.Atlas{
-    key = "telepurte_spades_2",
-    path = "telepurte_spades_2.png",
-    px = 71,
-    py = 95,
-	atlas_table = 'ASSET_ATLAS'
-}
-]]
 
 SMODS.DeckSkin{
 	key = "telepurte_spades",
 	suit = 'Spades',
-	ranks = {
-		'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"
+	palettes = {
+		{
+			key = 'lc',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_spades_1',
+			posStyle = 'suit'
+		}
 	},
-	--hc_atlas = "telepurte_spades_2",
-	lc_atlas = "telepurte_spades_1",
 	loc_txt = {
 		['en-us'] = 'Telepurte'
-	},
-	posStyle = 'suit'
+	}
 }
 
 --hearts--
@@ -89,31 +87,25 @@ SMODS.Atlas{
     path = "telepurte_hearts_1.png",
     px = 71,
     py = 95,
-	atlas_table = 'ASSET_ATLAS'
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
 }
-
---[[
-SMODS.Atlas{
-    key = "telepurte_hearts_2",
-    path = "telepurte_hearts_2.png",
-    px = 71,
-    py = 95,
-	atlas_table = 'ASSET_ATLAS'
-}
-]]
 
 SMODS.DeckSkin{
 	key = "telepurte_hearts",
 	suit = 'Hearts',
-	ranks = {
-		'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"
+	palettes = {
+		{
+			key = 'lc',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_hearts_1',
+			posStyle = 'suit'
+		}
 	},
-	--hc_atlas = "telepurte_hearts_2",
-	lc_atlas = "telepurte_hearts_1",
 	loc_txt = {
 		['en-us'] = 'Telepurte'
-	},
-	posStyle = 'suit'
+	}
 }
 
 --Diamonds--
@@ -122,31 +114,25 @@ SMODS.Atlas{
     path = "telepurte_diamonds_1.png",
     px = 71,
     py = 95,
-	atlas_table = 'ASSET_ATLAS'
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
 }
-
---[[
-SMODS.Atlas{
-    key = "telepurte_diamonds_2",
-    path = "telepurte_diamonds_2.png",
-    px = 71,
-    py = 95,
-	atlas_table = 'ASSET_ATLAS'
-}
-]]
 
 SMODS.DeckSkin{
 	key = "telepurte_diamonds",
 	suit = 'Diamonds',
-	ranks = {
-		'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"
+	palettes = {
+		{
+			key = 'lc',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_diamonds_1',
+			posStyle = 'suit'
+		}
 	},
-	--hc_atlas = "telepurte_diamonds_2",
-	lc_atlas = "telepurte_diamonds_1",
 	loc_txt = {
 		['en-us'] = 'Telepurte'
-	},
-	posStyle = 'suit'
+	}
 }
 
 --jokers--
