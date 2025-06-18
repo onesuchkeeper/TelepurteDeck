@@ -1,22 +1,11 @@
---- STEAMODDED HEADER
---- MOD_NAME: Telepurte Deck
---- MOD_ID: TeleDeck
---- MOD_AUTHOR: [OneSuchKeeper, Telepurte]
---- MOD_DESCRIPTION: Adds a custom deck with Telepurte themed cards.
---- VERSION: 1.0.0
---- LOADER_VERSION_GEQ: 1.0.0
---- BADGE_COLOUR: 148bdb
---- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-1404g]
---- PRIORITY: 0
-----------------------------------------------
-------------MOD CODE -------------------------
 function debugMessage(message)
-	sendDebugMessage('[Telepurte Deck] ' .. message)
+	sendDebugMessage('[Telepurte Cards] ' .. message)
 end
 
 debugMessage("Launching")
 
 G.F_NO_ACHIEVEMENTS = false
+
 local Mod = SMODS.current_mod
 
 --icon--
@@ -135,95 +124,126 @@ SMODS.DeckSkin{
 	}
 }
 
---jokers--
-SMODS.Atlas{
-	key = 'telepurte_jokers',
-	path = 'Jokers.png',
-	px = 71,
-	py = 95,
-	atlas_table = 'ASSET_ATLAS'
-}
+if TexturePack and AltTexture then
 
-SMODS.Joker:take_ownership('j_rough_gem', {
-    atlas = "telepurte_jokers",
-    pos = { x = 0, y = 0 },
-	loc_txt = {
-		['en-us'] = {
-			name = 'Amina',
-			text = {
-				"Played cards with",
-				"{C:diamonds}Diamonds{} suit earn",
-				"{C:money}$#1#{} when scored", 
-			},
-			unlock = {
-				"Have at least {E:1,C:attention}#1#",
-				"cards with {E:1,C:attention}#2#",
-				"suit in your deck"
+	debugMessage("Installing Malverk texture pack")
+
+	AltTexture({
+		key = 'telepurteJokers',
+		set = 'Joker',
+		path = 'Jokers.png',
+		loc_txt = {
+		  name = 'Telepurte Cards',
+		},
+		display_pos = {x=2,y=0},
+		original_sheet = false,
+		keys = {
+			"j_rough_gem",
+			"j_bloodstone",
+			"j_arrowhead",
+			"j_onyx_agate",
+		},
+	})
+
+	TexturePack({
+		key = "telepurteJokers",
+		textures = {
+			"telepurteCards_telepurteJokers"
+		},
+		localization = true
+	})
+	
+else
+	--jokers--
+	SMODS.Atlas{
+		key = 'telepurte_jokers',
+		path = 'Jokers.png',
+		px = 71,
+		py = 95,
+		atlas_table = 'ASSET_ATLAS'
+	}
+
+	SMODS.Joker:take_ownership('j_rough_gem', {
+		atlas = "telepurte_jokers",
+		pos = { x = 0, y = 0 },
+		loc_txt = {
+			['en-us'] = {
+				name = 'Amina',
+				text = {
+					"Played cards with",
+					"{C:diamonds}Diamonds{} suit earn",
+					"{C:money}$#1#{} when scored", 
+				},
+				unlock = {
+					"Have at least {E:1,C:attention}#1#",
+					"cards with {E:1,C:attention}#2#",
+					"suit in your deck"
+				}
 			}
 		}
-	}
-})
+	})
 
-SMODS.Joker:take_ownership('j_bloodstone', {
-    atlas = "telepurte_jokers",
-    pos = { x = 1, y = 0 },
-	loc_txt = {
-		['en-us'] = {
-			name = 'Chloe',
-			text = {
-				"{C:green}#1# in #2#{} chance for",
-				"played cards with",
-				"{C:hearts}Hearts{} suit to give",
-				"{X:mult,C:white} X#3# {} Mult when scored", 
-			},
-			unlock = {
-				"Have at least {E:1,C:attention}#1#",
-				"cards with {E:1,C:attention}#2#",
-				"suit in your deck"
+	SMODS.Joker:take_ownership('j_bloodstone', {
+		atlas = "telepurte_jokers",
+		pos = { x = 1, y = 0 },
+		loc_txt = {
+			['en-us'] = {
+				name = 'Chloe',
+				text = {
+					"{C:green}#1# in #2#{} chance for",
+					"played cards with",
+					"{C:hearts}Hearts{} suit to give",
+					"{X:mult,C:white} X#3# {} Mult when scored", 
+				},
+				unlock = {
+					"Have at least {E:1,C:attention}#1#",
+					"cards with {E:1,C:attention}#2#",
+					"suit in your deck"
+				}
 			}
 		}
-	}
-})
+	})
 
-SMODS.Joker:take_ownership('j_arrowhead', {
-    atlas = "telepurte_jokers",
-    pos = { x = 2, y = 0 },
-	loc_txt = {
-		['en-us'] = {
-			name = 'Nila',
-			text = {
-				"Played cards with",
-				"{C:spades}Spades{} suit give",
-				"{C:chips}+#1#{} Chips when scored",
-			},
-			unlock = {
-				"Have at least {E:1,C:attention}#1#",
-				"cards with {E:1,C:attention}#2#",
-				"suit in your deck"
+	SMODS.Joker:take_ownership('j_arrowhead', {
+		atlas = "telepurte_jokers",
+		pos = { x = 2, y = 0 },
+		loc_txt = {
+			['en-us'] = {
+				name = 'Nila',
+				text = {
+					"Played cards with",
+					"{C:spades}Spades{} suit give",
+					"{C:chips}+#1#{} Chips when scored",
+				},
+				unlock = {
+					"Have at least {E:1,C:attention}#1#",
+					"cards with {E:1,C:attention}#2#",
+					"suit in your deck"
+				}
 			}
 		}
-	}
-})
+	})
 
-SMODS.Joker:take_ownership('j_onyx_agate', {
-    atlas = "telepurte_jokers",
-    pos = { x = 3, y = 0 },
-	loc_txt = {
-		['en-us'] = {
-			name = 'Zoe',
-			text = {
-				"Played cards with",
-				"{C:clubs}Club{} suit give",
-				"{C:mult}+#1#{} Passion when scored", 
-			},
-			unlock = {
-				"Have at least {E:1,C:attention}#1#",
-				"cards with {E:1,C:attention}#2#",
-				"suit in your deck"
+	SMODS.Joker:take_ownership('j_onyx_agate', {
+		atlas = "telepurte_jokers",
+		pos = { x = 3, y = 0 },
+		loc_txt = {
+			['en-us'] = {
+				name = 'Zoe',
+				text = {
+					"Played cards with",
+					"{C:clubs}Club{} suit give",
+					"{C:mult}+#1#{} Passion when scored", 
+				},
+				unlock = {
+					"Have at least {E:1,C:attention}#1#",
+					"cards with {E:1,C:attention}#2#",
+					"suit in your deck"
+				}
 			}
 		}
-	}
-})
+	})
+end
 
 -------------------
 --- Credits Tab ---
