@@ -1,12 +1,10 @@
-function debugMessage(message)
+local Mod = SMODS.current_mod
+
+function Mod:debugMessage(message)
 	sendDebugMessage('[Telepurte Cards] ' .. message)
 end
 
-debugMessage("Launching")
-
-G.F_NO_ACHIEVEMENTS = false
-
-local Mod = SMODS.current_mod
+Mod:debugMessage("Launching")
 
 --icon--
 SMODS.Atlas({
@@ -126,7 +124,7 @@ SMODS.DeckSkin{
 
 if TexturePack and AltTexture then
 
-	debugMessage("Installing Malverk texture pack")
+	Mod:debugMessage("Installing Malverk texture pack")
 
 	AltTexture({
 		key = 'telepurteJokers',
@@ -154,6 +152,8 @@ if TexturePack and AltTexture then
 	})
 	
 else
+	Mod:debugMessage("Loading textures directly into atlases")
+
 	--jokers--
 	SMODS.Atlas{
 		key = 'telepurte_jokers',
