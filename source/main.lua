@@ -24,6 +24,15 @@ SMODS.Atlas{
 	prefix_config = { key = false }
 }
 
+SMODS.Atlas{
+    key = "telepurte_clubs_2",
+    path = "telepurte_clubs_2.png",
+    px = 71,
+    py = 95,
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
+}
+
 SMODS.DeckSkin{
 	key = "telepurte_clubs",
 	suit = 'Clubs',
@@ -34,6 +43,14 @@ SMODS.DeckSkin{
 			display_ranks = {'King', 'Queen', 'Jack'},
 			atlas = 'telepurte_clubs_1',
 			posStyle = 'suit'
+		},
+		{
+			key = 'Hunatro',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_clubs_2',
+			posStyle = 'suit',
+			colour = HEX('87b445')
 		}
 	},
 	loc_txt = {
@@ -51,6 +68,15 @@ SMODS.Atlas{
 	prefix_config = { key = false }
 }
 
+SMODS.Atlas{
+    key = "telepurte_spades_2",
+    path = "telepurte_spades_2.png",
+    px = 71,
+    py = 95,
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
+}
+
 SMODS.DeckSkin{
 	key = "telepurte_spades",
 	suit = 'Spades',
@@ -61,6 +87,14 @@ SMODS.DeckSkin{
 			display_ranks = {'King', 'Queen', 'Jack'},
 			atlas = 'telepurte_spades_1',
 			posStyle = 'suit'
+		},
+		{
+			key = 'Hunatro',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_spades_2',
+			posStyle = 'suit',
+			colour = HEX("489cd7")
 		}
 	},
 	loc_txt = {
@@ -78,6 +112,15 @@ SMODS.Atlas{
 	prefix_config = { key = false }
 }
 
+SMODS.Atlas{
+    key = "telepurte_hearts_2",
+    path = "telepurte_hearts_2.png",
+    px = 71,
+    py = 95,
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
+}
+
 SMODS.DeckSkin{
 	key = "telepurte_hearts",
 	suit = 'Hearts',
@@ -88,6 +131,14 @@ SMODS.DeckSkin{
 			display_ranks = {'King', 'Queen', 'Jack'},
 			atlas = 'telepurte_hearts_1',
 			posStyle = 'suit'
+		},
+		{
+			key = 'Hunatro',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_hearts_2',
+			posStyle = 'suit',
+			colour = HEX('e24b3b')
 		}
 	},
 	loc_txt = {
@@ -105,6 +156,15 @@ SMODS.Atlas{
 	prefix_config = { key = false }
 }
 
+SMODS.Atlas{
+    key = "telepurte_diamonds_2",
+    path = "telepurte_diamonds_2.png",
+    px = 71,
+    py = 95,
+	atlas_table = 'ASSET_ATLAS',
+	prefix_config = { key = false }
+}
+
 SMODS.DeckSkin{
 	key = "telepurte_diamonds",
 	suit = 'Diamonds',
@@ -115,6 +175,14 @@ SMODS.DeckSkin{
 			display_ranks = {'King', 'Queen', 'Jack'},
 			atlas = 'telepurte_diamonds_1',
 			posStyle = 'suit'
+		},
+		{
+			key = 'Hunatro',
+			ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"},
+			display_ranks = {'King', 'Queen', 'Jack'},
+			atlas = 'telepurte_diamonds_2',
+			posStyle = 'suit',
+			colour = HEX('e1893d')
 		}
 	},
 	loc_txt = {
